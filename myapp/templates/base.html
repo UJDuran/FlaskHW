@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	{% if title %}
+		<title>{{title}}!</title>
+	{% else %}
+		<title>No Name</title>
+	{% endif %}
+
+    </head>
+    <body>
+	<h1>{{title}}!</h1>    
+	<div>
+	    <a href="https://www.google.com">goooogle</a>
+	</div>
+
+	{% block content %}
+	{% endblock %}
+
+    <form method = "POST" novalidate>
+	
+
+	<p> {{ form.city_name.label }} <br>
+	{{ form.city_name(size=32) }} </p>
+    
+
+        <p> {{ form.city_rank.label }} <br>
+	{{ form.city_rank(size=18) }} </p>
+
+	<p> {{ form.is_visited.label }} <br>
+	    {{ form.is_visited() }} </p>
+
+	<p> {{ form.submit.label }} <br>
+	    {{ form.submit() }} </p>
+    </form>
+    </body>
+</html>
